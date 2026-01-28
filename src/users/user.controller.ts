@@ -33,7 +33,6 @@ export class UsersController {
     return { success: true, message: 'profile updated', data: updated };
   }
 
-  // ===== ADMIN =====
   @UseGuards(AuthGuard, RoleGuard)
   @Roles(UserRoles.ADMIN)
   @Get()

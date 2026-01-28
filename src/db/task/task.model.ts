@@ -14,7 +14,7 @@ export class Task {
   description?: string;
 
   @Prop({ default: TaskStatus.AVAILABLE })
-  status: string;
+  status: TaskStatus;
 
   @Prop({ type: Types.ObjectId, ref: 'User' })
   user: Types.ObjectId;
