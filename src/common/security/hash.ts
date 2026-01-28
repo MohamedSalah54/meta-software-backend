@@ -1,4 +1,4 @@
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcryptjs';
 
 export function hash(data: string, saltOrRound: number = 10): string {
   return bcrypt.hashSync(data, saltOrRound);
