@@ -8,6 +8,11 @@ async function bootstrap() {
 
   app.use(cookieParser());
 
+  app.enableCors({
+    origin: true, 
+    credentials: true,
+  });
+
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -16,6 +21,7 @@ async function bootstrap() {
     }),
   );
 
-  await app.listen(process.env.PORT || 3001);
+  const port = process.env.PORT || 3000;
+  await app.listen(port, '0.0.0.0');
 }
 bootstrap();
